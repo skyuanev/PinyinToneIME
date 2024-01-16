@@ -1,11 +1,7 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.3"
 
-    aaptOptions {
-        noCompress 'dat'
-    }
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
@@ -29,6 +25,10 @@ android {
         cmake {
             path 'src/main/cpp/CMakeLists.txt'
         }
+    }
+    namespace 'com.android.inputmethod.pinyin'
+    androidResources {
+        noCompress 'dat'
     }
 }
 
